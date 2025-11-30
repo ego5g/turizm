@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { Route } from '../types';
 import { Clock, TrendingUp, MapPin, Sparkles, Loader2, Filter, ChevronRight } from 'lucide-react';
-import { generateItinerary } from '../services/geminiService';
+// REMOVED: No direct import of server-side code
+// import { generateItinerary } from '../services/geminiService'; 
 import { useLanguage } from '../contexts/LanguageContext';
 
 const MOCK_ROUTES: Route[] = [
@@ -28,7 +29,7 @@ const MOCK_ROUTES: Route[] = [
     id: '3',
     title: 'Mestia to Ushguli Trek',
     description: 'The classic 4-day hike connecting Svaneti villages to the highest settlement in Europe. Medieval towers everywhere.',
-    image: 'https://loremflickr.com/800/600/ushguli,svaneti/all',
+    image: 'https://loremflickr.com/800/600/ushguli,svaneti/all', 
     duration: '4 Days',
     difficulty: 'Hard',
     region: 'Svaneti'
@@ -65,32 +66,54 @@ const MOCK_ROUTES: Route[] = [
 export default function RoutesPage() {
   const { t, language } = useLanguage();
   
-  // State for AI Planner
   const [plannerDestination, setPlannerDestination] = useState('');
   const [plannerDuration, setPlannerDuration] = useState('3 days');
   const [plannerInterests, setPlannerInterests] = useState('');
   const [aiResult, setAiResult] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null); // Added state for errors
 
-  // State for Filters
   const [difficultyFilter, setDifficultyFilter] = useState<'All' | 'Easy' | 'Moderate' | 'Hard'>('All');
 
+  // REWRITTEN: This function now safely calls the server-side API route
   const handleAIPlan = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!plannerDestination) return;
     
     setIsLoading(true);
     setAiResult(null);
-    
-    const result = await generateItinerary(
-      plannerDestination, 
-      plannerDuration, 
-      plannerInterests || "general sightseeing",
-      language
-    );
-    
-    setAiResult(result);
-    setIsLoading(false);
+    setError(null); // Reset error state on new request
+
+    try {
+      const response = await fetch('/api/generate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          destination: plannerDestination,
+          duration: plannerDuration,
+          interests: plannerInterests || "general sightseeing",
+          language: language,
+        }),
+      });
+
+      if (!response.ok) {
+        // Handle HTTP errors from the API route
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'An unknown error occurred.');
+      }
+
+      const data = await response.json();
+      setAiResult(data.itinerary);
+
+    } catch (err: any) {
+      // Handle fetch errors or errors thrown from the API response
+      setError(err.message);
+      console.error("Client-side fetch error:", err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const filteredRoutes = MOCK_ROUTES.filter(route => {
@@ -169,7 +192,14 @@ export default function RoutesPage() {
               </div>
             </form>
 
-            {aiResult && (
+            {error && ( // Display error messages to the user
+              <div className="mt-8 p-6 bg-red-100 text-red-800 rounded-2xl shadow-lg">
+                <h3 className="font-bold">An Error Occurred</h3>
+                <p>{error}</p>
+              </div>
+            )}
+
+            {aiResult && !error && ( // Only show result if there is no error
               <div className="mt-8 p-8 bg-white/95 text-gray-900 rounded-2xl shadow-lg animate-in slide-in-from-bottom-4">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                    <Sparkles className="text-purple-600" size={20} /> {t.routes.yourItinerary}

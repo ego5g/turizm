@@ -1,56 +1,39 @@
-'use server'
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import { Language } from '../types';
+import { GoogleGenAI } from "@google/genai";
+import { Language } from "../types";
 
-// IMPORTANT: Add your Google AI API key to the .env.local file
-const API_KEY = process.env.GOOGLE_AI_API_KEY;
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
-if (!API_KEY) {
-  throw new Error("Missing GOOGLE_AI_API_KEY in .env.local");
-}
-
-const genAI = new GoogleGenerativeAI(API_KEY);
-
-export async function generateItinerary(
-  destination: string, 
-  duration: string, 
-  interests: string,
-  language: Language
-) {
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
-
-  const languageMap = {
-    en: 'English',
-    ru: 'Russian',
-    ka: 'Georgian'
-  }
-
-  const prompt = `
-    You are an expert travel planner for Georgia (the country).
-    Generate a concise, compelling, and well-structured travel itinerary based on the following details. 
-    The output must be in ${languageMap[language]}.
-
-    **Destination:** ${destination}
-    **Trip Duration:** ${duration}
-    **Main Interests:** ${interests}
-
-    **Output Requirements:**
-    - Start with a catchy, one-sentence headline.
-    - Follow with a 2-3 sentence summary paragraph.
-    - Provide a day-by-day breakdown (e.g., Day 1, Day 2). 
-    - For each day, list 2-4 key activities or sights with brief, enticing descriptions.
-    - Keep the total output under 200 words.
-    - Format the output nicely using Markdown (headings, bold text, lists). 
-    - Do not include any pre-amble or post-amble, just the itinerary itself.
-  `;
-
+export const generateItinerary = async (destination: string, duration: string, interests: string, language: Language): Promise<string> => {
   try {
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = await response.text();
-    return text;
+    const model = 'gemini-2.5-flash';
+    
+    let langInstruction = "Respond in English.";
+    if (language === 'ru') langInstruction = "Отвечай на русском языке.";
+    if (language === 'ka') langInstruction = "უპასუხე ქართულ ენაზე.";
+
+    const prompt = `
+      Act as a professional Georgian tour guide.
+      Create a detailed ${duration} itinerary for visiting ${destination} in Georgia.
+      The traveler is interested in: ${interests}.
+      
+      ${langInstruction}
+      Format the response using Markdown.
+      Include:
+      - Daily breakdown (Morning, Afternoon, Evening)
+      - Recommended local dishes to try
+      - Estimated travel times between spots
+      
+      Keep the tone welcoming and exciting.
+    `;
+
+    const response = await ai.models.generateContent({
+      model: model,
+      contents: prompt,
+    });
+
+    return response.text || "Sorry, I couldn't generate an itinerary at this time. Please try again.";
   } catch (error) {
-    console.error("Error generating itinerary:", error);
-    return "Sorry, I couldn't generate an itinerary at this time. Please try again later.";
+    console.error("Gemini API Error:", error);
+    return "An error occurred while contacting the AI guide. Please check your connection or API key.";
   }
-}
+};
