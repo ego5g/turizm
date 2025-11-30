@@ -2,8 +2,11 @@ export type Language = 'en' | 'ru' | 'ka';
 
 export interface Route {
   id: string;
+  slug: string;
   title: string;
+  titleKey: string;
   description: string;
+  descKey: string;
   image: string;
   duration: string;
   difficulty: 'Easy' | 'Moderate' | 'Hard' | 'Extreme';

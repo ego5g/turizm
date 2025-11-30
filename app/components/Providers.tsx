@@ -1,7 +1,7 @@
 'use client'
 
-import { ThemeProvider } from '../contexts/ThemeContext';
-import { LanguageProvider } from '../contexts/LanguageContext';
+import { ThemeProvider } from '@/app/contexts/ThemeContext';
+import { LanguageProvider } from '@/app/contexts/LanguageContext';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (

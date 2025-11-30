@@ -57,7 +57,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col md:flex-row gap-4 justify-center">
               <Link
-                href="/routes"
+                href="/routes#planner"
                 className="inline-flex items-center justify-center px-8 py-4 bg-georgianRed text-white text-lg font-bold rounded-full hover:bg-red-700 transition-all shadow-lg shadow-red-500/30 hover:-translate-y-1"
               >
                 {t.home.cta} <ArrowRight className="ml-2" size={20} />

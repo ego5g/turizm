@@ -1,88 +1,103 @@
 'use client'
 import React, { useState } from 'react';
-import { Route } from '../types';
-import { Clock, TrendingUp, MapPin, Sparkles, Loader2, Filter, ChevronRight } from 'lucide-react';
-// REMOVED: No direct import of server-side code
-// import { generateItinerary } from '../services/geminiService'; 
-import { useLanguage } from '../contexts/LanguageContext';
+import Link from 'next/link';
+import { Route } from '@/app/types';
+import { Clock, TrendingUp, MapPin, Sparkles, Loader2, Filter, ChevronRight, DraftingCompass, Wind, Calendar, MessageSquare } from 'lucide-react';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
-const MOCK_ROUTES: Route[] = [
+const ROUTES_DATA = [
   {
     id: '1',
-    title: 'Tbilisi Old Town Walk',
-    description: 'Explore the narrow streets, sulfur baths, and Narikala fortress. A perfect introduction to the capital.',
-    image: 'https://loremflickr.com/800/600/tbilisi,architecture/all', 
+    slug: 'tbilisi-old-town-walk',
+    titleKey: 'tbilisiTitle',
+    descKey: 'tbilisiDesc',
+    image: 'https://loremflickr.com/1200/800/tbilisi,architecture/all?lock=1',
     duration: '4 Hours',
     difficulty: 'Easy',
     region: 'Tbilisi'
   },
   {
     id: '2',
-    title: 'Kazbegi & Gergeti Trinity',
-    description: 'A breathtaking drive along the Georgian Military Highway to Mount Kazbek. See the iconic church above the clouds.',
-    image: 'https://loremflickr.com/800/600/kazbegi,mountain/all',
+    slug: 'kazbegi-gergeti-trinity',
+    titleKey: 'kazbegiTitle',
+    descKey: 'kazbegiDesc',
+    image: 'https://loremflickr.com/1200/800/kazbegi,mountain/all?lock=2',
     duration: '1 Day',
     difficulty: 'Moderate',
     region: 'Mtskheta-Mtianeti'
   },
   {
     id: '3',
-    title: 'Mestia to Ushguli Trek',
-    description: 'The classic 4-day hike connecting Svaneti villages to the highest settlement in Europe. Medieval towers everywhere.',
-    image: 'https://loremflickr.com/800/600/ushguli,svaneti/all', 
+    slug: 'mestia-to-ushguli-trek',
+    titleKey: 'svanetiTitle',
+    descKey: 'svanetiDesc',
+    image: 'https://loremflickr.com/1200/800/ushguli,svaneti/all?lock=3',
     duration: '4 Days',
     difficulty: 'Hard',
     region: 'Svaneti'
   },
   {
     id: '4',
-    title: 'Kakheti Wine Tour',
-    description: 'Visit ancient cellars and taste traditional Qvevri wine in Signagi and Telavi. Experience the supra culture.',
-    image: 'https://loremflickr.com/800/600/vineyard,georgia/all', 
+    slug: 'kakheti-wine-tour',
+    titleKey: 'kakhetiTitle',
+    descKey: 'kakhetiDesc',
+    image: 'https://loremflickr.com/1200/800/vineyard,georgia/all?lock=4',
     duration: '2 Days',
     difficulty: 'Easy',
     region: 'Kakheti'
   },
   {
     id: '5',
-    title: 'Vardzia Cave City',
-    description: 'Explore the massive 12th-century cave monastery complex carved into the slopes of Erusheti Mountain.',
-    image: 'https://loremflickr.com/800/600/vardzia,caves/all', 
+    slug: 'vardzia-cave-city',
+    titleKey: 'vardziaTitle',
+    descKey: 'vardziaDesc',
+    image: 'https://loremflickr.com/1200/800/vardzia,caves/all?lock=5',
     duration: '1 Day',
     difficulty: 'Moderate',
     region: 'Samtskhe-Javakheti'
   },
   {
     id: '6',
-    title: 'Tusheti National Park',
-    description: 'For the adventurous. Accessible only by 4x4 in summer. untouched nature and ancient traditions.',
-    image: 'https://loremflickr.com/800/600/tusheti,landscape/all', 
+    slug: 'tusheti-national-park',
+    titleKey: 'tushetiTitle',
+    descKey: 'tushetiDesc',
+    image: 'https://loremflickr.com/1200/800/tusheti,landscape/all?lock=6',
     duration: '3 Days',
     difficulty: 'Extreme',
     region: 'Tusheti'
   }
-];
+] as const;
 
 export default function RoutesPage() {
   const { t, language } = useLanguage();
   
-  const [plannerDestination, setPlannerDestination] = useState('');
-  const [plannerDuration, setPlannerDuration] = useState('3 days');
-  const [plannerInterests, setPlannerInterests] = useState('');
-  const [aiResult, setAiResult] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null); // Added state for errors
+  const MOCK_ROUTES: Route[] = ROUTES_DATA.map(route => ({
+    ...route,
+    title: t.routes[route.titleKey as keyof typeof t.routes],
+    description: t.routes[route.descKey as keyof typeof t.routes],
+  }));
 
   const [difficultyFilter, setDifficultyFilter] = useState<'All' | 'Easy' | 'Moderate' | 'Hard'>('All');
+  const [plannerDestination, setPlannerDestination] = useState('');
+  const [plannerDuration, setPlannerDuration] = useState('3');
+  const [plannerInterests, setPlannerInterests] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [aiResult, setAiResult] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  // REWRITTEN: This function now safely calls the server-side API route
+  const filteredRoutes = MOCK_ROUTES.filter(route => {
+    if (difficultyFilter === 'All') return true;
+    if (difficultyFilter === 'Hard') return route.difficulty === 'Hard' || route.difficulty === 'Extreme';
+    return route.difficulty === difficultyFilter;
+  });
+
   const handleAIPlan = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!plannerDestination) return;
     
     setIsLoading(true);
     setAiResult(null);
-    setError(null); // Reset error state on new request
+    setError(null);
 
     try {
       const response = await fetch('/api/generate', {
@@ -99,7 +114,6 @@ export default function RoutesPage() {
       });
 
       if (!response.ok) {
-        // Handle HTTP errors from the API route
         const errorData = await response.json();
         throw new Error(errorData.error || 'An unknown error occurred.');
       }
@@ -108,7 +122,6 @@ export default function RoutesPage() {
       setAiResult(data.itinerary);
 
     } catch (err: any) {
-      // Handle fetch errors or errors thrown from the API response
       setError(err.message);
       console.error("Client-side fetch error:", err);
     } finally {
@@ -116,14 +129,8 @@ export default function RoutesPage() {
     }
   };
 
-  const filteredRoutes = MOCK_ROUTES.filter(route => {
-    if (difficultyFilter === 'All') return true;
-    if (difficultyFilter === 'Hard') return route.difficulty === 'Hard' || route.difficulty === 'Extreme';
-    return route.difficulty === difficultyFilter;
-  });
-
   return (
-    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen pb-12 transition-colors duration-300 pt-20">
+    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen pb-12 transition-colors duration-300 pt-10">
       {/* Header */}
       <div className="bg-white dark:bg-gray-800 pb-12 pt-8 border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 text-center">
@@ -166,10 +173,10 @@ export default function RoutesPage() {
                   value={plannerDuration}
                   onChange={(e) => setPlannerDuration(e.target.value)}
                 >
-                  <option value="1 day">1 Day</option>
-                  <option value="3 days">3 Days</option>
-                  <option value="1 week">1 Week</option>
-                  <option value="2 weeks">2 Weeks</option>
+                  <option value="1 day">1 {t.planner.day}</option>
+                  <option value="3 days">3 {t.planner.days}</option>
+                  <option value="1 week">1 {t.planner.days}</option>
+                  <option value="2 weeks">2 {t.planner.days}</option>
                 </select>
               </div>
               <div className="md:col-span-4">
@@ -185,27 +192,33 @@ export default function RoutesPage() {
                 <button 
                   type="submit" 
                   disabled={isLoading}
-                  className="w-full h-full bg-yellow-400 text-indigo-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors flex justify-center items-center gap-2 disabled:bg-gray-400 disabled:cursor-not-allowed shadow-lg"
+                  className="w-full h-full min-h-[56px] bg-yellow-400 text-indigo-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors flex justify-center items-center gap-2 disabled:bg-gray-400 disabled:cursor-not-allowed shadow-lg"
                 >
                   {isLoading ? <Loader2 className="animate-spin" size={20} /> : t.routes.generate}
                 </button>
               </div>
             </form>
 
-            {error && ( // Display error messages to the user
+            {error && ( 
               <div className="mt-8 p-6 bg-red-100 text-red-800 rounded-2xl shadow-lg">
                 <h3 className="font-bold">An Error Occurred</h3>
                 <p>{error}</p>
               </div>
             )}
 
-            {aiResult && !error && ( // Only show result if there is no error
+            {aiResult && !error && ( 
               <div className="mt-8 p-8 bg-white/95 text-gray-900 rounded-2xl shadow-lg animate-in slide-in-from-bottom-4">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
                    <Sparkles className="text-purple-600" size={20} /> {t.routes.yourItinerary}
                 </h3>
                 <div className="prose prose-sm md:prose-base max-w-none text-gray-700 whitespace-pre-wrap leading-relaxed">
                   {aiResult}
+                </div>
+                 <div className="mt-8 text-center">
+                    <Link href="/forum/new-topic" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/30">
+                        <MessageSquare size={20} />
+                        {t.planner.discuss}
+                    </Link>
                 </div>
               </div>
             )}
@@ -240,7 +253,7 @@ export default function RoutesPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredRoutes.map((route) => (
-            <div key={route.id} className="group bg-white dark:bg-gray-800 rounded-3xl shadow-sm hover:shadow-2xl dark:shadow-gray-900 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 dark:border-gray-700 hover:-translate-y-1">
+            <Link key={route.id} href={`/routes/${route.slug}`} className="group bg-white dark:bg-gray-800 rounded-3xl shadow-sm hover:shadow-2xl dark:shadow-gray-900 transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100 dark:border-gray-700 hover:-translate-y-1">
               <div className="relative h-64 overflow-hidden">
                 <img 
                   src={route.image} 
@@ -276,12 +289,12 @@ export default function RoutesPage() {
                     <Clock size={16} /> {route.duration}
                   </span>
                   
-                  <button className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-900 dark:text-white group-hover:bg-georgianRed group-hover:text-white transition-all">
+                  <div className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-900 dark:text-white group-hover:bg-georgianRed group-hover:text-white transition-all">
                     <ChevronRight size={20} />
-                  </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
