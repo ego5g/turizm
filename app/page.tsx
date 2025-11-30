@@ -1,10 +1,13 @@
+'use client'; // <-- 1. Mark as a Client Component to use hooks
 import React from 'react';
 import { ArrowRight, Mountain, Utensils, Building, CheckCircle2, Calendar, Heart } from 'lucide-react';
 import Link from 'next/link';
-import { translations } from './translations';
+// REMOVED: Static import is no longer needed
+// import { translations } from './translations'; 
+import { useLanguage } from './contexts/LanguageContext'; // <-- 2. Import the context hook
 
 export default function Home() {
-  const t = translations.en;
+  const { t } = useLanguage(); // <-- 3. Get the correct translations object from the context
 
   const tips = [
     { icon: <CheckCircle2 size={24} />, title: t.home.tip1Title, desc: t.home.tip1Desc, color: "text-green-500", bg: "bg-green-100 dark:bg-green-900/30" },
@@ -14,17 +17,17 @@ export default function Home() {
 
   const destinations = [
     {
-      title: 'Tbilisi',
+      title: t.home.tbilisi, // <-- 4. Use translation keys for destinations
       desc: t.home.ancientDesc,
       img: 'https://loremflickr.com/800/600/tbilisi,oldtown/all'
     },
     {
-      title: 'Batumi',
-      desc: t.home.heroSubtitle,
+      title: t.home.batumi,
+      desc: t.home.coastalDesc, // Using a more specific key
       img: 'https://loremflickr.com/800/600/batumi,sea/all'
     },
     {
-      title: 'Svaneti',
+      title: t.home.svaneti,
       desc: t.home.wildDesc,
       img: 'https://loremflickr.com/800/600/mountains,svaneti/all'
     }
@@ -41,19 +44,13 @@ export default function Home() {
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60 dark:to-gray-900"></div>
-          
-          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16 text-white text-center md:text-left">
-            <div className="container mx-auto">
-               {/* Content moved to next section for styling, but gradient keeps transition smooth */}
-            </div>
-          </div>
         </section>
 
         {/* Title Section */}
         <section className="bg-white dark:bg-gray-900 py-16 -mt-12 relative z-10 rounded-t-3xl shadow-2xl mx-auto max-w-7xl transition-colors duration-300">
           <div className="container mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
-              {t.home.heroTitle} <span className="text-transparent bg-clip-text bg-gradient-to-r from-georgianRed to-red-600">Georgia</span>
+              {t.home.heroTitle} <span className="text-transparent bg-clip-text bg-gradient-to-r from-georgianRed to-red-600">{t.home.georgia}</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
               {t.home.heroSubtitle}
@@ -71,28 +68,6 @@ export default function Home() {
               >
                 {t.home.join}
               </Link>
-            </div>
-            <div className="flex flex-col md:flex-row gap-4 justify-center mt-4">
-              <button className="inline-flex items-center justify-center px-8 py-4 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white text-lg font-bold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
-                Generate Plan
-              </button>
-              <button className="inline-flex items-center justify-center px-8 py-4 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white text-lg font-bold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
-                Explore Routes
-              </button>
-            </div>
-            <div className="flex gap-4 justify-center mt-4">
-              <button className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
-                All
-              </button>
-              <button className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
-                Easy
-              </button>
-              <button className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
-                Moderate
-              </button>
-              <button className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-all">
-                Hard
-              </button>
             </div>
           </div>
         </section>
@@ -152,7 +127,7 @@ export default function Home() {
             <div className="flex justify-between items-end mb-12">
               <h3 className="text-4xl font-bold text-gray-900 dark:text-white">{t.home.popularDest}</h3>
               <Link href="/routes" className="hidden md:flex text-georgianRed font-bold hover:gap-2 gap-1 items-center transition-all">
-                 {'See all'} <ArrowRight size={20} />
+                 {t.home.seeAll} <ArrowRight size={20} />
               </Link>
             </div>
             
