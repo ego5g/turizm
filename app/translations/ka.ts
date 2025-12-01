@@ -73,6 +73,7 @@ export const ka = {
     searchPlaceholder: "თემების ძიება...",
     postedBy: "გამოქვეყნებულია",
     backToForum: "ფორუმზე დაბრუნება",
+    backToCategory: "კატეგორიაში დაბრუნება",
     shareYourThoughts: "გაუზიარეთ თქვენი სამოგზაურო აზრები, კითხვები ან მარშრუტის იდეები საზოგადოებას.",
     topicTitle: "თემის სათაური",
     titlePlaceholder: "მაგ., საუკეთესო დრო ყაზბეგის მოსანახულებლად?",
@@ -120,7 +121,16 @@ export const ka = {
     interestsPlaceholder: "მაგ., ლაშქრობა, ღვინის დეგუსტაცია, ისტორია",
     cta: "გეგმის გენერირება",
     resultTitle: "თქვენი პერსონალიზებული მარშრუტი",
-    discuss: "განიხილეთ ეს გეგმა ფორუმზე"
+    discuss: "განიხილეთ ეს გეგმა ფორუმზე",
+    editPlan: "რედაქტირება",
+    deletePlan: "წაშლა",
+    sharePlan: "გაზიარება",
+    savePlan: "გეგმის შენახვა",
+    downloadPdf: "PDF-ის ჩამოტვირთვა",
+    deleteConfirmationTitle: "წაშლის დადასტურება",
+    deleteConfirmationMessage: "დარწმუნებული ხართ, რომ გსურთ ამ გეგმის წაშლა? ამ მოქმედების გაუქმება შეუძლებელია.",
+    cancel: "გაუქმება",
+    confirm: "წაშლა"
   },
   route: {
     allRoutes: "ყველა მარშრუტი",
@@ -135,7 +145,6 @@ export const ka = {
     water: "ბოთლის წყალი",
     wineTasting: "ღვინის დეგუსტაცია",
     cableCar: "საბაგირო ბილეთი",
-    // Itinerary Titles
     tbilisiMorning: "ნარიყალა და გოგირდის აბანოები",
     tbilisiAfternoon: "ძველი ქალაქი და მეიდან ბაზარი",
     tbilisiEvening: "ვახშამი შარდენის ქუჩაზე",
@@ -154,7 +163,6 @@ export const ka = {
     tushetiMorning: "მგზავრობა ომალოში",
     tushetiAfternoon: "სოფელ დართლოს გამოკვლევა",
     tushetiEvening: "თუშური კოშკის ვახშამი",
-    // Itinerary Descriptions
     tbilisiMorningDesc: "აკრიფეთ საბაგიროთი უძველეს ნარიყალას ციხეზე, ქალაქის პანორამული ხედებისთვის, შემდეგ ჩამოდით ისტორიულ გოგირდის აბანოების რაიონში.",
     tbilisiAfternoonDesc: "დაიკარგეთ მომხიბვლელ ვიწრო ქუჩებში, აღმოაჩინეთ ფარული ეზოები და დაათვალიერეთ სუვენირები მეიდან ბაზარში.",
     tbilisiEveningDesc: "მიირთვით უგემრიელესი ქართული ვახშამი შარდენის ქუჩის მრავალრიცხოვან ცოცხალ რესტორანში.",

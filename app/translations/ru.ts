@@ -73,7 +73,7 @@ export const ru = {
       searchPlaceholder: "Поиск тем...",
       postedBy: "Опубликовано",
       backToForum: "Назад на форум",
-       backToCategory: "Назад в категорию",
+      backToCategory: "Назад в категорию",
       shareYourThoughts: "Делитесь своими мыслями о путешествиях, вопросами или идеями маршрутов с сообществом.",
       topicTitle: "Название темы",
       titlePlaceholder: "например, Лучшее время для посещения Казбеги?",

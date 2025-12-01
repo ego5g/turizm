@@ -11,6 +11,7 @@ This application is a travel guide for Georgia, designed to help users discover 
 - **Styling:** Tailwind CSS for a modern, utility-first approach.
 - **UI:** Responsive design, ensuring a seamless experience on both mobile and desktop. Components are designed to be interactive and visually appealing, with a focus on clean layouts, good typography, and a vibrant color palette.
 - **Internationalization (i18n):** The application supports multiple languages (English, Georgian, Russian) using a custom `LanguageContext`.
+- **Visuals (In Progress):** A major visual enhancement is underway to create a more polished, premium, and aesthetically pleasing user interface.
 
 ### Core Features
 - **Homepage (`app/page.tsx`):**
@@ -31,34 +32,50 @@ This application is a travel guide for Georgia, designed to help users discover 
 - **Forum (`app/forum/...`):**
     - A space for users to discuss travel plans.
     - Users can view existing topics, create new topics, and reply to discussions.
-    - **(In Progress)** Data is being integrated with Firebase Realtime Database for persistence.
 
-## Current Task: Enhanced AI Planner Experience
+## Previous Task: Add "Save Plan" Feature
 
 ### Goal
-To improve the user experience of the AI Planner by making it more interactive, non-blocking, and persistent. This involved changing the guide's name, implementing background generation, and adding a history feature.
+To add a "Save Plan" button and ensure the application builds successfully after a series of fixes related to internationalization (i18n) files.
 
 ### Steps Taken
-1.  **Updated Guide Persona:**
-    - Modified `app/services/geminiService.ts` to change the AI guide's persona to "Dato" and improved the prompt to generate more welcoming and detailed itineraries.
-
-2.  **Implemented Background Generation & State Management:**
-    - Installed `uuid` for unique plan IDs and `react-hot-toast` for notifications.
-    - Created the `useAiPlanner.ts` custom hook to handle all planner-related logic:
-        - Initiating API requests to `/api/generate`.
-        - Managing the state of plans (generating, completed, error).
-        - Storing and retrieving plans from `localStorage`.
-        - Displaying toast notifications for user feedback.
-    - Created `AiPlannerContext.tsx` to provide the hook's state and functions to the entire application.
-    - Wrapped the root layout in `AiPlannerProvider` and added the `<Toaster />` component.
-
-3.  **Refactored UI Components:**
-    - Renamed `AIPlanner.tsx` to `AIPlannerForm.tsx` and simplified it to only be responsible for capturing user input and calling the `generatePlan` function from the shared context.
-    - Created `HistorySidebar.tsx` to display the list of saved plans from the `useSharedAiPlanner` hook, allowing users to view details and manage their history.
-    - Updated `Header.tsx` to include a `BookOpen` icon that toggles the `HistorySidebar`. The icon also displays a notification badge for new plans and a loading spinner during generation.
-
-4.  **Integrated into Pages:**
-    - Updated `app/routes/page.tsx` to use the new, simplified `<AIPlannerForm />`. The display of results is now handled by the history sidebar.
+1.  **Initial Attempt:** Added a "Save Plan" button to the planner UI, but encountered build failures due to missing translations.
+2.  **Troubleshooting i18n:**
+    - Identified that the `savePlan` key was missing from the `ru.ts` and `en.ts` translation files.
+    - Attempted to add the keys, but introduced further build errors due to mismatched type definitions between the language files.
+    - Discovered that the `backToCategory` key was missing from the `forum` object in the `ka.ts` file, and several planner-related keys were also absent.
+3.  **Resolution:**
+    - Corrected the `ru.ts` file by adding the missing `backToCategory` key to the `forum` object and ensuring correct syntax.
+    - Fully updated the `ka.ts` file to match the structure of the `en.ts` (the reference file), adding all missing keys for `forum` and `planner` sections with their Georgian translations.
+4.  **Final Build:** Ran `npm run build` successfully after unifying the structure of all translation files (`en.ts`, `ru.ts`, `ka.ts`).
 
 ### Outcome
-The AI Planner is now a much more powerful and user-friendly feature. The non-blocking UI, persistent history, and clear notifications create a polished and professional experience. The refactored code is clean, maintainable, and well-structured, using modern React patterns like hooks and context.
+The "Save Plan" functionality is now reflected in the codebase, and the application is stable and build-ready. The i18n system is robust and consistent across all supported languages.
+
+## Current Task: Visual Design Enhancement
+
+### Goal
+To transform the application's visual design into a beautiful, premium, and highly polished user experience that is both modern and intuitive. The design will evoke the rich and authentic feel of Georgia.
+
+### Plan
+1.  **Establish a Design System:**
+    - **Color Palette:** Introduce a sophisticated color palette.
+        - **Primary:** A deep, rich maroon (`#5a0d27`), inspired by Georgian Saperavi wine, for key elements and accents.
+        - **Secondary:** A warm beige (`#f5f5dc`) for backgrounds, providing a soft, tactile feel.
+        - **Accent:** A vibrant gold (`#ffc72c`) for calls-to-action and highlights.
+        - **Text:** Dark slate gray (`#2f4f4f`) for primary text and a lighter gray (`#708090`) for secondary text.
+    - **Typography:** Implement a new font pairing to enhance readability and elegance.
+        - **Headings:** Use 'Lora', a well-balanced contemporary serif with roots in calligraphy, for a touch of class.
+        - **Body:** Use 'Inter', a clean, highly readable sans-serif font for all body text, UI elements, and components.
+    - **Global Styles:** Update `app/globals.css` and `tailwind.config.ts` to reflect the new design system.
+
+2.  **Redesign Core Components:**
+    - **Layout & Header:** Update the main layout to use the new background color. Redesign the header for a cleaner look.
+    - **Buttons & Inputs:** Create new styles for buttons and form inputs, featuring the new color palette, rounded corners, and subtle hover effects to improve interactivity.
+    - **Cards:** Redesign the route and destination cards with soft, multi-layered drop shadows to create a "lifted" effect, rounded corners, and improved typography.
+    - **Hero Section:** Revamp the homepage's hero section with more impactful typography and a stronger call-to-action.
+
+3.  **Implementation:**
+    - Modify `app/layout.tsx` to import the new Google Fonts.
+    - Update `tailwind.config.ts` with the new color palette and font families.
+    - Systematically refactor the `.tsx` components (`page.tsx`, `Header.tsx`, `RouteCard.tsx`, etc.) to apply the new utility classes for colors, fonts, shadows, and spacing.
