@@ -66,6 +66,7 @@ export const ru = {
     subtitle: "Общайтесь с попутчиками, задавайте вопросы и делитесь своим опытом.",
     newTopic: "Создать новую тему",
     topics: "Темы",
+    noTopics: "Тем не найдено. Будьте первым!",
     replies: "Ответы",
     views: "Просмотры",
     lastActivity: "Последняя активность",
@@ -79,7 +80,14 @@ export const ru = {
     yourMessage: "Ваше сообщение",
     messagePlaceholder: "Напишите здесь свой подробный пост...",
     submitTopic: "Отправить тему",
-    submitting: "Отправка..."
+    submitting: "Отправка...",
+    firstReply: "Будьте первым, кто ответит!",
+    joinDiscussion: "Присоединяйтесь к обсуждению",
+    yourName: "Ваше имя",
+    namePlaceholder: "например, Георгий",
+    yourComment: "Ваш комментарий",
+    commentPlaceholder: "Поделитесь своими мыслями...",
+    submitReply: "Отправить ответ"
   },
   categories: {
     general: "Общие обсуждения",

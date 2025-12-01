@@ -66,6 +66,7 @@ export const en = {
     subtitle: "Connect with fellow travelers, ask questions, and share your experiences.",
     newTopic: "Start a New Topic",
     topics: "Topics",
+    noTopics: "No topics found. Be the first to post!",
     replies: "Replies",
     views: "Views",
     lastActivity: "Last Activity",
@@ -79,7 +80,14 @@ export const en = {
     yourMessage: "Your Message",
     messagePlaceholder: "Write your detailed post here...",
     submitTopic: "Submit Topic",
-    submitting: "Submitting..."
+    submitting: "Submitting...",
+    firstReply: "Be the first to reply!",
+    joinDiscussion: "Join the discussion",
+    yourName: "Your name",
+    namePlaceholder: "e.g., George",
+    yourComment: "Your comment",
+    commentPlaceholder: "Share your thoughts...",
+    submitReply: "Submit Reply"
   },
   categories: {
     general: "General Discussion",
