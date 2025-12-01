@@ -125,6 +125,7 @@ export const ru = {
       editPlan: "Редактировать",
       deletePlan: "Удалить",
       sharePlan: "Поделиться",
+      savePlan: "Сохранить",
       downloadPdf: "Скачать PDF",
       deleteConfirmationTitle: "Подтвердите удаление",
       deleteConfirmationMessage: "Вы уверены, что хотите удалить этот план? Это действие необратимо.",

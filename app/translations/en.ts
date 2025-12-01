@@ -125,6 +125,7 @@ export const en = {
       editPlan: "Edit",
       deletePlan: "Delete",
       sharePlan: "Share",
+      savePlan: "Save Plan",
       downloadPdf: "Download PDF",
       deleteConfirmationTitle: "Confirm Deletion",
       deleteConfirmationMessage: "Are you sure you want to delete this plan? This action cannot be undone.",
