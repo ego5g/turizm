@@ -89,11 +89,19 @@ export const en = {
     commentPlaceholder: "Share your thoughts...",
     submitReply: "Submit Reply"
   },
-  categories: {
-    general: "General Discussion",
-    destinations: "Destinations",
-    tips: "Travel Tips & Advice",
-    planning: "Itinerary Planning",
+  "categories": {
+    "general": "General Discussion",
+    "destinations": "Destinations",
+    "tips": "Travel Tips & Advice",
+    "planning": "Itinerary Planning",
+    "finance": "Finance & Banking",
+    "accommodation": "Accommodation",
+    "transport": "Transport",
+    "mobile": "Mobile & Internet",
+    "legal": "Legal & Visas",
+    "food": "Food & Dining",
+    "events": "Events & Meetups",
+    "marketplace": "Marketplace",
   },
   planner: {
     title: "AI Itinerary Planner",

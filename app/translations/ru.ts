@@ -89,11 +89,19 @@ export const ru = {
       commentPlaceholder: "Поделитесь своими мыслями...",
       submitReply: "Отправить ответ"
     },
-    categories: {
-      general: "Общие обсуждения",
-      destinations: "Направления",
-      tips: "Советы и рекомендации",
-      planning: "Планирование маршрута",
+    "categories": {
+    "general": "Общие вопросы",
+    "destinations": "Места и направления",
+    "tips": "Советы и лайфхаки",
+    "planning": "Планирование поездки",
+    "finance": "Финансы и банки",
+    "accommodation": "Жилье и недвижимость",
+    "transport": "Транспорт и авто",
+    "mobile": "Связь и интернет",
+    "legal": "Визы и законы",
+    "food": "Еда и рестораны",
+    "events": "События и встречи",
+    "marketplace": "Барахолка и услуги",
     },
     planner: {
       title: "Планировщик маршрутов с ИИ",
