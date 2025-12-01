@@ -49,7 +49,15 @@ export default function ForumPage() {
     { key: 'destinations', name: t.categories.destinations },
     { key: 'tips', name: t.categories.tips },
     { key: 'planning', name: t.categories.planning },
-  ];
+    { key: 'finance', name: t.categories.finance },
+    { key: 'accommodation', name: t.categories.accommodation },
+    { key: 'transport', name: t.categories.transport },
+    { key: 'mobile', name: t.categories.mobile },
+    { key: 'legal', name: t.categories.legal },
+    { key: 'food', name: t.categories.food },
+    { key: 'events', name: t.categories.events },
+    { key: 'marketplace', name: t.categories.marketplace },
+];
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);

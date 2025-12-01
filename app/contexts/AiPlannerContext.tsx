@@ -9,6 +9,10 @@ interface AiPlannerContextType {
   plans: Plan[];
   generatePlan: (args: { destination: string; duration: string; interests: string }) => Promise<void>;
   clearHistory: () => void;
+  deletePlan: (planId: string) => void;
+  loadPlanForEditing: (plan: Plan) => void;
+  planToEdit: Plan | null;
+  clearPlanToEdit: () => void;
 }
 
 const AiPlannerContext = createContext<AiPlannerContextType | undefined>(undefined);

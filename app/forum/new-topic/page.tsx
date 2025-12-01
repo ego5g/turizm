@@ -48,6 +48,14 @@ export default function NewTopicPage() {
     { id: 'destinations', name: t.categories.destinations },
     { id: 'tips', name: t.categories.tips },
     { id: 'planning', name: t.categories.planning },
+    { id: 'finance', name: t.categories.finance },
+    { id: 'accommodation', name: t.categories.accommodation },
+    { id: 'transport', name: t.categories.transport },
+    { id: 'mobile', name: t.categories.mobile },
+    { id: 'legal', name: t.categories.legal },
+    { id: 'food', name: t.categories.food },
+    { id: 'events', name: t.categories.events },
+    { id: 'marketplace', name: t.categories.marketplace },
   ];
 
   return (
