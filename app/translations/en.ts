@@ -1,4 +1,5 @@
 export const en = {
+  locale: 'en-US',
   nav: {
     home: "Home",
     routes: "Routes",
@@ -94,6 +95,8 @@ export const en = {
     durationLabel: "Duration",
     day: "Day",
     days: "Days",
+    week: "Week",
+    weeks: "Weeks",
     interestsLabel: "Interests (Optional)",
     interestsPlaceholder: "e.g., hiking, wine tasting, history",
     cta: "Generate Plan",

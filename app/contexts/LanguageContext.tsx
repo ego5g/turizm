@@ -1,8 +1,8 @@
 'use client'
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { translations } from '@/app/translations'; // Corrected import path using alias
+import { translations } from '@/app/translations';
 
-type Language = 'en' | 'ru';
+type Language = 'en' | 'ru' | 'ka';
 
 interface LanguageContextType {
   language: Language;
@@ -17,7 +17,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
 
   useEffect(() => {
     const storedLang = localStorage.getItem('language') as Language;
-    if (storedLang && (storedLang === 'en' || storedLang === 'ru')) {
+    if (storedLang && (storedLang === 'en' || storedLang === 'ru' || storedLang === 'ka')) {
       setLanguage(storedLang);
     }
   }, []);

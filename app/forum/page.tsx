@@ -108,7 +108,7 @@ export default function ForumPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <Search className="absolute left-4 top-4.5 text-gray-400" size={24} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={24} />
           </div>
 
           {

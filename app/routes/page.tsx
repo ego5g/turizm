@@ -175,8 +175,8 @@ export default function RoutesPage() {
                 >
                   <option value="1 day">1 {t.planner.day}</option>
                   <option value="3 days">3 {t.planner.days}</option>
-                  <option value="1 week">1 {t.planner.days}</option>
-                  <option value="2 weeks">2 {t.planner.days}</option>
+                  <option value="1 week">1 {t.planner.week}</option>
+                  <option value="2 weeks">2 {t.planner.weeks}</option>
                 </select>
               </div>
               <div className="md:col-span-4">

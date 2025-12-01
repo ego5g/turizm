@@ -1,4 +1,5 @@
 export const ru = {
+  locale: 'ru-RU',
   nav: {
     home: "Главная",
     routes: "Маршруты",
@@ -94,6 +95,8 @@ export const ru = {
     durationLabel: "Продолжительность",
     day: "День",
     days: "Дней",
+    week: "Неделя",
+    weeks: "Недели",
     interestsLabel: "Интересы (необязательно)",
     interestsPlaceholder: "например, походы, дегустация вин, история",
     cta: "Сгенерировать план",
