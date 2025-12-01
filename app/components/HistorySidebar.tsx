@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useSharedAiPlanner, Plan } from '../contexts/AiPlannerContext';
 import { useLanguage } from '../contexts/LanguageContext';
-import { X, Loader2, ServerCrash, Sparkles, Trash2, Pencil, Share2, Download } from 'lucide-react';
+import { X, Loader2, ServerCrash, Sparkles, Trash2, Pencil, Save, Download } from 'lucide-react';
 import { format } from 'date-fns';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -17,10 +17,12 @@ interface HistorySidebarProps {
 
 export const HistorySidebar: React.FC<HistorySidebarProps> = ({ isOpen, onClose }) => {
   const { t } = useLanguage();
-  const { plans, clearHistory, deletePlan, loadPlanForEditing } = useSharedAiPlanner();
+  const { plans, clearHistory, deletePlan, updatePlanContent } = useSharedAiPlanner();
   const [selectedPlanId, setSelectedPlanId] = useState<string | null>(null);
   const [planToDelete, setPlanToDelete] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState(false);
+  const [editingPlanId, setEditingPlanId] = useState<string | null>(null);
+  const [editedContent, setEditedContent] = useState('');
   const planContentRef = useRef<HTMLDivElement>(null);
 
   const sortedPlans = React.useMemo(() => 
@@ -29,7 +31,6 @@ export const HistorySidebar: React.FC<HistorySidebarProps> = ({ isOpen, onClose 
 
   useEffect(() => {
     if (isOpen && sortedPlans.length > 0) {
-        // If the selected plan is deleted, or no plan is selected, select the latest one.
         const selectedPlanExists = sortedPlans.some(p => p.id === selectedPlanId);
         if (!selectedPlanId || !selectedPlanExists) {
             const latestPlan = sortedPlans.find(p => p.status === 'completed');
@@ -43,6 +44,13 @@ export const HistorySidebar: React.FC<HistorySidebarProps> = ({ isOpen, onClose 
   const selectedPlan = plans.find(p => p.id === selectedPlanId);
 
   const handleSelectPlan = (plan: Plan) => {
+    if (editingPlanId) {
+        if (confirm('You have unsaved changes. Are you sure you want to switch plans?')) {
+            setEditingPlanId(null);
+        } else {
+            return;
+        }
+    }
     setSelectedPlanId(plan.id);
   };
 
@@ -68,8 +76,15 @@ export const HistorySidebar: React.FC<HistorySidebarProps> = ({ isOpen, onClose 
   };
 
   const handleEdit = (plan: Plan) => {
-    loadPlanForEditing(plan);
-    onClose();
+    setEditingPlanId(plan.id);
+    setEditedContent(plan.result);
+  };
+
+  const handleSave = () => {
+    if (editingPlanId) {
+        updatePlanContent(editingPlanId, editedContent);
+        setEditingPlanId(null);
+    }
   };
 
   const handleDownloadPdf = async () => {
@@ -77,8 +92,8 @@ export const HistorySidebar: React.FC<HistorySidebarProps> = ({ isOpen, onClose 
     setIsDownloading(true);
     try {
       const canvas = await html2canvas(planContentRef.current, {
-        scale: 2, // Higher scale for better quality
-        backgroundColor: null, // Use element's background
+        scale: 2, 
+        backgroundColor: null, 
         useCORS: true
       });
       const imgData = canvas.toDataURL('image/png');
@@ -93,11 +108,11 @@ export const HistorySidebar: React.FC<HistorySidebarProps> = ({ isOpen, onClose 
       const canvasWidth = canvas.width;
       const canvasHeight = canvas.height;
       const ratio = canvasWidth / canvasHeight;
-      const imgWidth = pdfWidth - 20; // with margin
+      const imgWidth = pdfWidth - 20; 
       const imgHeight = imgWidth / ratio;
 
       let heightLeft = imgHeight;
-      let position = 10; // top margin
+      let position = 10; 
 
       pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
       heightLeft -= pdfHeight;
@@ -123,7 +138,7 @@ export const HistorySidebar: React.FC<HistorySidebarProps> = ({ isOpen, onClose 
 
   const PlanCard: React.FC<{ plan: Plan; }> = ({ plan }) => (
     <div className={`p-3 rounded-lg transition-colors border ${
-        selectedPlanId === plan.id
+        selectedPlanId === plan.id && !editingPlanId
           ? 'bg-georgianRed/10 dark:bg-georgianRed/20 border-georgianRed'
           : 'bg-gray-100 dark:bg-white/5 border-gray-200 dark:border-white/10'
       }`}>
@@ -140,7 +155,11 @@ export const HistorySidebar: React.FC<HistorySidebarProps> = ({ isOpen, onClose 
       </div>
       {plan.status === 'completed' && (
         <div className="flex items-center gap-2 mt-3 border-t border-gray-200 dark:border-white/10 pt-2">
-            <button onClick={() => handleEdit(plan)} className="p-1.5 text-gray-500 hover:text-blue-500 transition-colors rounded-md hover:bg-gray-200 dark:hover:bg-white/10" title={t.planner.editPlan}><Pencil size={16}/></button>
+            {editingPlanId === plan.id ? (
+                <button onClick={handleSave} className="p-1.5 text-gray-500 hover:text-green-500 transition-colors rounded-md hover:bg-gray-200 dark:hover:bg-white/10" title={t.planner.savePlan}><Save size={16}/></button>
+            ) : (
+                <button onClick={() => handleEdit(plan)} className="p-1.5 text-gray-500 hover:text-blue-500 transition-colors rounded-md hover:bg-gray-200 dark:hover:bg-white/10" title={t.planner.editPlan}><Pencil size={16}/></button>
+            )}
             <button onClick={() => handleDeleteRequest(plan.id)} className="p-1.5 text-gray-500 hover:text-red-500 transition-colors rounded-md hover:bg-gray-200 dark:hover:bg-white/10" title={t.planner.deletePlan}><Trash2 size={16}/></button>
             <button onClick={handleDownloadPdf} className="p-1.5 text-gray-500 hover:text-green-500 transition-colors rounded-md hover:bg-gray-200 dark:hover:bg-white/10" title={t.planner.downloadPdf}><Download size={16}/></button>
         </div>
@@ -187,16 +206,21 @@ export const HistorySidebar: React.FC<HistorySidebarProps> = ({ isOpen, onClose 
                 <div className="w-2/3 overflow-y-auto" >
                     {selectedPlan ? (
                     <div ref={planContentRef} className="p-6 bg-white dark:bg-gray-900">
-                        <article className="prose prose-sm md:prose-base dark:prose-invert max-w-none">
-                            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 !mt-0">{selectedPlan.destination}</h2>
-                            {selectedPlan.status === 'completed' && (
+                         {editingPlanId === selectedPlan.id ? (
+                            <textarea
+                                value={editedContent}
+                                onChange={(e) => setEditedContent(e.target.value)}
+                                className="w-full h-full bg-transparent text-gray-900 dark:text-white resize-none border-0 focus:ring-0 p-0 m-0 text-sm md:text-base"
+                                rows={20}
+                            />
+                        ) : (
+                            <article className="prose prose-sm md:prose-base dark:prose-invert max-w-none">
+                                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 !mt-0">{selectedPlan.destination}</h2>
                                 <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
                                     {selectedPlan.result}
                                 </ReactMarkdown>
-                            )}
-                            {selectedPlan.status === 'generating' && <p>Dato is working on this plan...</p>}
-                            {selectedPlan.status === 'error' && <p className="text-red-500 dark:text-red-400">Error: {selectedPlan.result || 'An unknown error occurred.'}</p>}
-                        </article>
+                            </article>
+                        )}
                     </div>
                     ) : (
                     <div className="text-center text-gray-500 flex flex-col items-center justify-center h-full">

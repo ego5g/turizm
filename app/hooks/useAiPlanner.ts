@@ -17,7 +17,6 @@ export interface Plan {
 export const useAiPlanner = () => {
   const { language } = useLanguage();
   const [plans, setPlans] = useState<Plan[]>([]);
-  const [planToEdit, setPlanToEdit] = useState<Plan | null>(null);
 
   // Load plans from localStorage on initial render
   useEffect(() => {
@@ -106,13 +105,14 @@ export const useAiPlanner = () => {
     toast.success('Plan deleted successfully.');
   };
 
-  const loadPlanForEditing = (plan: Plan) => {
-    setPlanToEdit(plan);
+  const updatePlanContent = (planId: string, newContent: string) => {
+    setPlans(prevPlans =>
+      prevPlans.map(p =>
+        p.id === planId ? { ...p, result: newContent, timestamp: Date.now() } : p
+      )
+    );
+    toast.success('Plan updated successfully!');
   };
 
-  const clearPlanToEdit = () => {
-    setPlanToEdit(null);
-  };
-
-  return { plans, generatePlan, clearHistory, deletePlan, loadPlanForEditing, planToEdit, clearPlanToEdit };
+  return { plans, generatePlan, clearHistory, deletePlan, updatePlanContent };
 };

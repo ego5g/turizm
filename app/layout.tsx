@@ -13,9 +13,21 @@ export const metadata = {
   title: 'Turizm.ge | Your Ultimate Guide to Georgia: Tours, Culture & Caucasus Mountains',
   description: 'Explore the majestic Caucasus mountains, ancient culture, wine regions, and hidden gems of Georgia. Book personalized tours and travel packages to Tbilisi, Batumi, Svaneti, and more. Your best travel partner in Georgia.',
   keywords: [
+    // Main Keys
     'Georgia tours', 'travel to Georgia', 'Caucasus mountains', 'Tbilisi', 'Batumi', 'Svaneti', 'Georgian culture', 'wine tours', 'tourism agency Georgia', 'private tours', 'travel packages', 'adventure tourism', 'Gudauri', 'Kazbegi', 'Mtskheta',
+    // RU Main Keys
     'туры в Грузию', 'отдых в Грузии', 'путешествие в Грузию', 'горы Кавказа', 'Тбилиси туры', 'Батуми отдых', 'Сванетия', 'грузинская кухня', 'винные туры', 'экскурсии в Грузии', 'частные туры', 'Гудаури', 'Казбеги',
+    // GE Main Keys
     'საქართველოს ტურები', 'მოგზაურობა საქართველოში', 'კავკასიონის მთები', 'თბილისი', 'ბათუმი', 'სვანეთი', 'ქართული კულტურა', 'ღვინის ტურები', 'ტურისტული სააგენტო საქართველო',
+    // --- NEW FAQ / REAL USER QUERIES (From CSV) ---
+    // Banking & Finance
+    'opening bank account Georgia', 'TBC bank tariffs', 'Credo bank card', 'money transfer Russia Georgia', 'KoronaPay Georgia', 'exchange rate lari ruble', 'открытие счета в Грузии', 'карта Credo', 'переводы Золотая Корона', 'обмен валюты Тбилиси',
+    // Living & Moving
+    'visa run Georgia', 'living in Tbilisi', 'renting apartment Batumi', 'Didi Digomi district', 'buying property Georgia', 'визаран Грузия', 'аренда жилья Батуми', 'районы Тбилиси', 'ВНЖ Грузии',
+    // Transport & Logistics
+    'Tbilisi Batumi train', 'train tickets Georgia', 'Ozon delivery Georgia', 'driving in Georgia', 'traffic fines Georgia', 'поезд Тбилиси Батуми', 'доставка Озон Грузия', 'штрафы ГИБДД Грузия',
+    // Connectivity
+    'Magti sim card', 'mobile internet Georgia', 'roaming in Georgia', 'мобильная связь Грузия', 'сим карта для туриста'
   ],
   alternates: {
     canonical: 'https://www.turizm.ge',

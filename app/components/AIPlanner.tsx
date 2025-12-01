@@ -23,11 +23,12 @@ export default function AIPlanner({ onClose, onOpenHistory }: AIPlannerProps) {
     e.preventDefault();
     if (isLoading) return;
     await generatePlan({ destination, duration, interests });
+    onClose?.();
     onOpenHistory();
   };
 
   return (
-    <section className="container mx-auto px-4 mt-12" id="ai-planner">
+    <section className="container mx-auto px-4 my-12" id="ai-planner">
         <div 
             className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl shadow-xl p-8 md:p-10 text-white overflow-hidden relative"
         >
@@ -89,7 +90,7 @@ export default function AIPlanner({ onClose, onOpenHistory }: AIPlannerProps) {
                 <button
                     type="button"
                     onClick={onOpenHistory}
-                    title={t.planner.myPlans} // Добавил title для всплывающей подсказки
+                    title={t.planner.myPlans}
                     className="h-full min-h-[56px] px-6 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 transition-colors flex justify-center items-center gap-2 shadow-lg text-lg"
                     >
                     <BookOpen size={22}/>
