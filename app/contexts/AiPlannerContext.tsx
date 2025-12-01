@@ -2,6 +2,9 @@
 import React, { createContext, useContext } from 'react';
 import { useAiPlanner, Plan } from '../hooks/useAiPlanner';
 
+// Re-export the Plan type so other components can use it
+export type { Plan };
+
 interface AiPlannerContextType {
   plans: Plan[];
   generatePlan: (args: { destination: string; duration: string; interests: string }) => Promise<void>;
