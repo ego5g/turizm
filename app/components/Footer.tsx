@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -47,8 +46,9 @@ export default function Footer() {
                 </svg>
               </a>
               <a href="https://t.me/tosendme" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-                 {/* Note: Ensure /tg.png exists in your /public folder */}
-                <Image src="/tg.png" alt="Telegram" width={28} height={28} className="hover:opacity-80 transition-opacity duration-300" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-white hover:text-blue-500 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M11.944 0C5.338 0 0 5.338 0 11.944s5.338 11.944 11.944 11.944 11.944-5.338 11.944-11.944S18.55 0 11.944 0zm5.922 8.358l-1.444 6.852c-.172.8-.644 1.011-1.311.622l-4.511-3.322-2.178 2.1c-.244.244-.444.444-.9.444l.322-4.622L16.322 7.5c.344-.311-.067-.489-.533-.178L7.1 12.062l-4.467-1.389c-.789-.244-.789-.956.178-1.422l15.122-5.878c.667-.256 1.2.167.989.989z"/>
+                </svg>
               </a>
               <a href="https://wa.me/995591017945" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-white hover:text-green-500 transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
