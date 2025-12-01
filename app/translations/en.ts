@@ -98,6 +98,9 @@ export const en = {
   planner: {
     title: "AI Itinerary Planner",
     subtitle: "Let our AI craft the perfect Georgian adventure for you. Just enter your destination, duration, and interests!",
+    aiGuideTitle: "Dato: Your Personal AI Guide",
+    aiGuideDesc: "Tell me your travel wishes, and I'll craft a personalized Georgian adventure just for you.",
+    myPlans: "My Travel Plans",
     destinationLabel: "Destination",
     destinationPlaceholder: "e.g., Tbilisi, Kazbegi",
     durationLabel: "Duration",

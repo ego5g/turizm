@@ -3,43 +3,28 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Providers from './components/Providers';
 import { Inter } from "next/font/google";
+import { Toaster } from 'react-hot-toast'; // 1. Импорт Toaster
+import { AiPlannerProvider } from './contexts/AiPlannerContext'; // 2. Импорт провайдера
 import "./globals.css";
-// Импорт для использования компонента Image, если он нужен в Header/Footer
-// import Image from 'next/image'; 
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
-// 1. МАКСИМАЛЬНО РАСШИРЕННЫЕ МЕТАДАННЫЕ (DEFAULT: EN)
 export const metadata = {
-  // Title с сильными ключевыми словами и призывом к действию
   title: 'Turizm.ge | Your Ultimate Guide to Georgia: Tours, Culture & Caucasus Mountains',
-  
-  // Description, богатый ключевыми словами и подробно описывающий услуги
   description: 'Explore the majestic Caucasus mountains, ancient culture, wine regions, and hidden gems of Georgia. Book personalized tours and travel packages to Tbilisi, Batumi, Svaneti, and more. Your best travel partner in Georgia.',
-  
-  // 2. МНОГОЯЗЫЧНЫЕ КЛЮЧЕВЫЕ СЛОВА
   keywords: [
-    // English
     'Georgia tours', 'travel to Georgia', 'Caucasus mountains', 'Tbilisi', 'Batumi', 'Svaneti', 'Georgian culture', 'wine tours', 'tourism agency Georgia', 'private tours', 'travel packages', 'adventure tourism', 'Gudauri', 'Kazbegi', 'Mtskheta',
-    // Russian
     'туры в Грузию', 'отдых в Грузии', 'путешествие в Грузию', 'горы Кавказа', 'Тбилиси туры', 'Батуми отдых', 'Сванетия', 'грузинская кухня', 'винные туры', 'экскурсии в Грузии', 'частные туры', 'Гудаури', 'Казбеги',
-    // Georgian (Картография)
     'საქართველოს ტურები', 'მოგზაურობა საქართველოში', 'კავკასიონის მთები', 'თბილისი', 'ბათუმი', 'სვანეთი', 'ქართული კულტურა', 'ღვინის ტურები', 'ტურისტული სააგენტო საქართველო',
   ],
-
-  // Canonical URL (ОЧЕНЬ ВАЖНО)
   alternates: {
-    canonical: 'https://www.turizm.ge', // Замените на реальный домен
+    canonical: 'https://www.turizm.ge',
   },
-
-  // Иконки (для PWA и браузера)
   icons: {
     icon: '/favicon.ico', 
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
-
-  // Open Graph (OG)
   openGraph: {
     title: 'Turizm.ge | Your Ultimate Guide to Georgia: Tours, Culture & Caucasus Mountains',
     description: 'Explore the majestic Caucasus mountains, ancient culture, wine regions, and hidden gems of Georgia.',
@@ -56,8 +41,6 @@ export const metadata = {
     locale: 'en_US', 
     type: 'website',
   },
-
-  // Twitter Card
   twitter: {
     card: 'summary_large_image',
     title: 'Turizm.ge | Your Ultimate Guide to Georgia',
@@ -66,7 +49,6 @@ export const metadata = {
   },
 };
 
-// 3. Схема LD+JSON для LocalBusiness/Organization
 const ldJsonSchema = {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
@@ -94,7 +76,6 @@ const ldJsonSchema = {
   "sameAs": [
     "https://t.me/tosendme",
     "https://wa.me/995591017945",
-    // Добавьте другие социальные сети
   ]
 };
 
@@ -104,32 +85,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // Устанавливаем язык на АНГЛИЙСКИЙ
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* LD+JSON СХЕМА */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJsonSchema) }}
         />
-        
-        {/* МАНИФЕСТ ДЛЯ PWA */}
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       
       <body className={`${inter.className} bg-white dark:bg-gray-900 transition-colors duration-300`}>
         <Providers>
-          <div className="flex flex-col min-h-screen">
-            <Header /> 
-            
-            {/* Семантический тег MAIN */}
-            <main className="flex-grow pt-16" role="main">
-              {children}
-            </main>
-            
-            {/* Footer теперь чист от прямого размещения контактов в RootLayout */}
-            <Footer />
-          </div>
+          {/* 3. Оборачиваем все в AiPlannerProvider */}
+          <AiPlannerProvider>
+            <div className="flex flex-col min-h-screen">
+              {/* 4. Toaster для уведомлений */}
+              <Toaster position="bottom-right" toastOptions={{ duration: 5000 }} />
+              
+              <Header /> 
+              
+              <main className="flex-grow pt-16" role="main">
+                {children}
+              </main>
+              
+              <Footer />
+            </div>
+          </AiPlannerProvider>
         </Providers>
       </body>
     </html>
