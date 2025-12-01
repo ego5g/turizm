@@ -88,68 +88,77 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={`relative px-4 py-2 flex items-center gap-2 transition-all duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-georgianRed after:transition-all after:duration-300 ${isActive(item.path).replace('font-bold', '')} ${pathname === item.path ? 'after:w-full font-bold' : 'after:w-0 hover:after:w-full'}`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+            <div className="hidden md:flex items-center">
+                <nav className="flex items-center space-x-1">
+                {navItems.map((item) => (
+                    <Link
+                    key={item.path}
+                    href={item.path}
+                    className={`relative px-4 py-2 flex items-center gap-2 transition-all duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-georgianRed after:transition-all after:duration-300 ${isActive(item.path).replace('font-bold', '')} ${pathname === item.path ? 'after:w-full font-bold' : 'after:w-0 hover:after:w-full'}`}
+                    >
+                    {item.name}
+                    </Link>
+                ))}
+                </nav>
               
-              <div className="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200 dark:border-gray-700">
-                <button
-                  onClick={() => setIsHistoryOpen(true)}
-                  className="relative p-2 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-blue-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                  aria-label="View Travel Plans"
-                >
-                  {isGenerating ? <Loader2 className="animate-spin" size={18} /> : <BookOpen size={18} />}
-                  {plans.length > 0 && !isGenerating && (
-                    <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-georgianRed ring-2 ring-white dark:ring-gray-900" />
-                  )}
-                </button>
-
-                <button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                  aria-label="Toggle Theme"
-                >
-                  {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
-                </button>
-
-                <div className="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
-                  {languages.map((lang) => (
+                <div className="flex items-center gap-3 ml-6 pl-6 border-l border-gray-200 dark:border-gray-700">
                     <button
-                      key={lang.code}
-                      onClick={() => setLanguage(lang.code)}
-                      className={`px-3 py-1 text-xs font-bold rounded-md transition-all duration-200 ${language === lang.code ? 'bg-white dark:bg-gray-600 text-georgianRed shadow-sm' : 'text-gray-500 dark:text-gray-400'}`}>
-                      {lang.label}
+                    onClick={() => setIsHistoryOpen(true)}
+                    className="relative p-2 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-blue-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                    aria-label="View Travel Plans"
+                    >
+                    {isGenerating ? <Loader2 className="animate-spin" size={18} /> : <BookOpen size={18} />}
+                    {plans.length > 0 && !isGenerating && (
+                        <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-georgianRed ring-2 ring-white dark:ring-gray-900" />
+                    )}
                     </button>
-                  ))}
+
+                    <button
+                    onClick={toggleTheme}
+                    className="p-2 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                    aria-label="Toggle Theme"
+                    >
+                    {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+                    </button>
+
+                    <div className="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+                    {languages.map((lang) => (
+                        <button
+                        key={lang.code}
+                        onClick={() => setLanguage(lang.code)}
+                        className={`px-3 py-1 text-xs font-bold rounded-md transition-all duration-200 ${language === lang.code ? 'bg-white dark:bg-gray-600 text-georgianRed shadow-sm' : 'text-gray-500 dark:text-gray-400'}`}>
+                        {lang.label}
+                        </button>
+                    ))}
+                    </div>
                 </div>
-              </div>
-            </nav>
+            </div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center gap-2">
-              <button
-                onClick={() => setIsHistoryOpen(true)}
-                className="relative p-2 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-blue-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                aria-label="View Travel Plans"
+                <button
+                    onClick={toggleTheme}
+                    className="p-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    aria-label="Toggle Theme"
+                    >
+                    {theme === 'light' ? <Moon size={22} /> : <Sun size={22} />}
+                </button>
+                <button
+                    onClick={() => setIsHistoryOpen(true)}
+                    className="relative p-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    aria-label="View Travel Plans"
+                    >
+                    {isGenerating ? <Loader2 className="animate-spin" size={22} /> : <BookOpen size={22} />}
+                    {plans.length > 0 && !isGenerating && (
+                        <span className="absolute top-1 right-1 block h-2 w-2 rounded-full bg-georgianRed ring-2 ring-white dark:ring-gray-900" />
+                    )}
+                </button>
+                <button
+                    className="p-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    onClick={() => setIsOpen(!isOpen)}
                 >
-                {isGenerating ? <Loader2 className="animate-spin" size={18} /> : <BookOpen size={18} />}
-                {plans.length > 0 && !isGenerating && (
-                    <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-georgianRed ring-2 ring-white dark:ring-gray-900" />
-                )}
-              </button>
-              <button
-                className="p-2 text-gray-600 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
+                    {isOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
             </div>
           </div>
         </div>
@@ -169,29 +178,25 @@ export default function Header() {
                 </Link>
               ))}
             </nav>
-            <div className="p-4 border-t border-gray-200 dark:border-gray-800 flex flex-col gap-4">
-                <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Theme</span>
+            <div className="p-4 border-t border-gray-200 dark:border-gray-800">
+                <span className="block text-sm font-medium text-gray-600 dark:text-gray-400 mb-3">Language</span>
+                <div className="grid grid-cols-3 gap-2">
+                    {languages.map((lang) => (
                     <button
-                    onClick={toggleTheme}
-                    className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    aria-label="Toggle Theme"
+                        key={lang.code}
+                        onClick={() => {
+                        setLanguage(lang.code);
+                        setIsOpen(false);
+                        }}
+                        className={`py-2 text-sm font-medium rounded-lg border ${
+                        language === lang.code 
+                            ? 'border-georgianRed text-georgianRed bg-red-50 dark:bg-red-900/20' 
+                            : 'border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300'
+                        }`}
                     >
-                    {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+                        {lang.label}
                     </button>
-                </div>
-                <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Language</span>
-                    <div className="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
-                        {languages.map((lang) => (
-                            <button
-                            key={lang.code}
-                            onClick={() => {setLanguage(lang.code); setIsOpen(false);}}
-                            className={`px-3 py-1 text-xs font-bold rounded-md transition-all duration-200 ${language === lang.code ? 'bg-white dark:bg-gray-600 text-georgianRed shadow-sm' : 'text-gray-500 dark:text-gray-400'}`}>
-                            {lang.label}
-                            </button>
-                        ))}
-                    </div>
+                    ))}
                 </div>
             </div>
           </div>
