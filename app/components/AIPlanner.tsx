@@ -83,9 +83,9 @@ export default function AIPlanner({ onClose, onOpenHistory }: AIPlannerProps) {
                 <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full h-full min-h-[56px] bg-yellow-400 text-indigo-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors flex justify-center items-center gap-2 disabled:bg-gray-400 disabled:cursor-not-allowed shadow-lg text-lg"
+                    className="w-full h-full min-h-[56px] bg-yellow-400 text-indigo-900 font-bold rounded-xl hover:bg-yellow-300 transition-colors flex justify-center items-center gap-2 disabled:bg-yellow-400/70 disabled:cursor-not-allowed shadow-lg text-lg"
                 >
-                    {isLoading ? <Loader2 className="animate-spin" size={24} /> : t.planner.cta}
+                    {isLoading ? <Sparkles className="animate-pulse" size={24} /> : t.planner.cta}
                 </button>
                 <button
                     type="button"
