@@ -1,29 +1,46 @@
 'use client'
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { Send, MessageSquare, Tag, Loader2, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import { createTopic } from '../../lib/firebase';
 
 export default function NewTopicPage() {
   const { t } = useLanguage();
+  const router = useRouter();
   const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
   const [content, setContent] = useState('');
   const [category, setCategory] = useState('general');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!title.trim() || !content.trim() || !author.trim()) {
+        setError("All fields are required.");
+        return;
+    }
+    
     setIsSubmitting(true);
-    // Here you would typically send the data to your backend API
-    // For this example, we'll just simulate a delay.
-    console.log('Submitting new topic:', { title, content, category });
-    await new Promise(resolve => setTimeout(resolve, 1500)); 
-    setIsSubmitting(false);
-    // Ideally, you would redirect the user to the new topic page
-    // or back to the forum index after successful submission.
-    alert('Topic submitted successfully! (Simulation)');
-    setTitle('');
-    setContent('');
+    setError(null);
+
+    try {
+      const newTopicId = await createTopic({
+        title,
+        author,
+        content,
+        category,
+      });
+      // Redirect to the new topic page
+      router.push(`/forum/${newTopicId}`);
+    } catch (err) {
+      console.error(err);
+      setError('Failed to create topic. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const categories = [
@@ -50,6 +67,13 @@ export default function NewTopicPage() {
                         {t.forum.newTopic}
                     </h1>
                     <p className="text-gray-500 dark:text-gray-400 mb-8">{t.forum.shareYourThoughts}</p>
+                    
+                    {error && (
+                        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg relative mb-6" role="alert">
+                            <strong className="font-bold">Oops! </strong>
+                            <span className="block sm:inline">{error}</span>
+                        </div>
+                    )}
 
                     <form onSubmit={handleFormSubmit} className="space-y-6">
                         <div>
@@ -60,6 +84,19 @@ export default function NewTopicPage() {
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
                                 placeholder={t.forum.titlePlaceholder}
+                                className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 border-transparent rounded-lg focus:ring-georgianRed focus:border-georgianRed transition"
+                                required 
+                            />
+                        </div>
+
+                        <div>
+                            <label htmlFor="author" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Name</label>
+                            <input 
+                                type="text" 
+                                id="author"
+                                value={author}
+                                onChange={(e) => setAuthor(e.target.value)}
+                                placeholder="e.g. Mariam"
                                 className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 border-transparent rounded-lg focus:ring-georgianRed focus:border-georgianRed transition"
                                 required 
                             />

@@ -18,17 +18,25 @@ export interface ForumTopic {
   title: string;
   author: string;
   category: string;
-  content?: string; // Added content for detailed view
-  replies: number;
+  content?: string; 
+  repliesCount: number;
   views: number;
   lastActivity: string;
   isPinned?: boolean;
+  replies?: { [key: string]: Omit<ForumReply, 'id'> };
+}
+
+export interface ForumReply {
+  id: string;
+  author: string;
+  content: string;
+  timestamp: string;
 }
 
 export interface ForumCategory {
   id: string;
   name: string;
-  key: string; // Key for translation
+  key: string; 
   description: string;
   icon: any;
 }
