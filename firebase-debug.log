@@ -719,3 +719,405 @@
 [error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
 [debug] [2025-12-01T17:15:06.204Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
 [debug] [2025-12-01T17:15:06.204Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-01T20:49:07.540Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-01T20:49:07.544Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2025-12-01T20:49:07.554Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.555Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.558Z] > refreshing access token with scopes: []
+[debug] [2025-12-01T20:49:07.561Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-01T20:49:07.561Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.614Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.614Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.615Z] > refreshing access token with scopes: []
+[debug] [2025-12-01T20:49:07.615Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-01T20:49:07.615Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.630Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.630Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.631Z] > refreshing access token with scopes: []
+[debug] [2025-12-01T20:49:07.632Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-01T20:49:07.632Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.635Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-01T20:49:07.636Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2025-12-01T20:49:07.637Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.637Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.637Z] > refreshing access token with scopes: []
+[debug] [2025-12-01T20:49:07.638Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-01T20:49:07.638Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.641Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.641Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.642Z] > refreshing access token with scopes: []
+[debug] [2025-12-01T20:49:07.642Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-01T20:49:07.642Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.647Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.647Z] Checked if tokens are valid: false, expires at: 1764612903989
+[debug] [2025-12-01T20:49:07.648Z] > refreshing access token with scopes: []
+[debug] [2025-12-01T20:49:07.648Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-01T20:49:07.648Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.766Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-01T20:49:07.766Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.808Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [none]
+[debug] [2025-12-01T20:49:07.808Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-01T20:49:07.815Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-01T20:49:07.815Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.828Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [none]
+[debug] [2025-12-01T20:49:07.829Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-01T20:49:07.836Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-01T20:49:07.836Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.849Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-12-01T20:49:07.849Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-01T20:49:07.932Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-01T20:49:07.932Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.950Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-12-01T20:49:07.950Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-01T20:49:07.957Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-01T20:49:07.957Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:07.970Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-12-01T20:49:07.970Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-01T20:49:08.033Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-01T20:49:08.033Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-01T20:49:08.055Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-12-01T20:49:08.055Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-01T20:49:08.687Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-12-01T20:49:08.687Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-12-01T20:49:08.715Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com 200
+[debug] [2025-12-01T20:49:08.715Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [omitted]
+[debug] [2025-12-01T20:49:08.738Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com 200
+[debug] [2025-12-01T20:49:08.738Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [omitted]
+[debug] [2025-12-01T20:49:08.815Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-12-01T20:49:08.816Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-12-01T20:49:08.831Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-12-01T20:49:08.832Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-12-01T20:49:08.857Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-12-01T20:49:08.859Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-01T20:49:08.870Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-01T20:49:08.870Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-01T20:49:08.875Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-01T20:49:08.875Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-01T20:49:08.901Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-01T20:49:08.902Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-01T20:49:08.903Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-01T20:49:08.904Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-01T20:49:08.909Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-01T20:49:08.909Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-01T20:49:08.911Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-01T20:49:08.911Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-03T08:59:34.786Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-03T08:59:34.788Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2025-12-03T08:59:34.815Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:34.816Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:34.818Z] > refreshing access token with scopes: []
+[debug] [2025-12-03T08:59:34.823Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-03T08:59:34.824Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:35.159Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:35.160Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:35.161Z] > refreshing access token with scopes: []
+[debug] [2025-12-03T08:59:35.162Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-03T08:59:35.177Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:35.311Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:35.311Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:35.312Z] > refreshing access token with scopes: []
+[debug] [2025-12-03T08:59:35.320Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-03T08:59:35.321Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:35.346Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-03T08:59:35.347Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2025-12-03T08:59:35.349Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:35.349Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:35.349Z] > refreshing access token with scopes: []
+[debug] [2025-12-03T08:59:35.351Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-03T08:59:35.353Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:35.365Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:35.374Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:35.374Z] > refreshing access token with scopes: []
+[debug] [2025-12-03T08:59:35.375Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-03T08:59:35.375Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:35.396Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:35.397Z] Checked if tokens are valid: false, expires at: 1764625747033
+[debug] [2025-12-03T08:59:35.397Z] > refreshing access token with scopes: []
+[debug] [2025-12-03T08:59:35.398Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-12-03T08:59:35.398Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:35.855Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-03T08:59:35.860Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:35.914Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-12-03T08:59:35.914Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-03T08:59:36.036Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-03T08:59:36.036Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:36.082Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-12-03T08:59:36.083Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-03T08:59:36.298Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-03T08:59:36.299Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:36.327Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [none]
+[debug] [2025-12-03T08:59:36.327Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-03T08:59:36.398Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-03T08:59:36.405Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:36.432Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [none]
+[debug] [2025-12-03T08:59:36.432Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-03T08:59:36.452Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-03T08:59:36.460Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:36.488Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [none]
+[debug] [2025-12-03T08:59:36.489Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-03T08:59:36.577Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-12-03T08:59:36.585Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-12-03T08:59:36.617Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [none]
+[debug] [2025-12-03T08:59:36.618Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2025-12-03T08:59:36.960Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-12-03T08:59:36.960Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2025-12-03T08:59:37.049Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-12-03T08:59:37.050Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2025-12-03T08:59:37.304Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com 200
+[debug] [2025-12-03T08:59:37.304Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [omitted]
+[debug] [2025-12-03T08:59:37.376Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com 200
+[debug] [2025-12-03T08:59:37.382Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-03T08:59:37.391Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-03T08:59:37.391Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-03T08:59:37.394Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-03T08:59:37.394Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2025-12-03T08:59:37.401Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com 200
+[debug] [2025-12-03T08:59:37.401Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [omitted]
+[debug] [2025-12-03T08:59:37.413Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com 200
+[debug] [2025-12-03T08:59:37.413Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-03T08:59:37.479Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-03T08:59:37.485Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-03T08:59:37.507Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-03T08:59:37.507Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-03T08:59:37.547Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-03T08:59:37.548Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2025-12-03T08:59:37.564Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-12-03T08:59:37.568Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T09:39:22.564Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T09:39:22.565Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T09:39:22.567Z] Checked if tokens are valid: false, expires at: 1764755975585
+[debug] [2026-01-01T09:39:22.568Z] Checked if tokens are valid: false, expires at: 1764755975585
+[debug] [2026-01-01T09:39:22.568Z] > refreshing access token with scopes: []
+[debug] [2026-01-01T09:39:22.572Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-01-01T09:39:22.572Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-01T09:39:22.630Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T09:39:22.631Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T09:39:22.631Z] Checked if tokens are valid: false, expires at: 1764755975585
+[debug] [2026-01-01T09:39:22.632Z] Checked if tokens are valid: false, expires at: 1764755975585
+[debug] [2026-01-01T09:39:22.632Z] > refreshing access token with scopes: []
+[debug] [2026-01-01T09:39:22.633Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-01-01T09:39:22.633Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-01T09:39:22.697Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-01-01T09:39:22.697Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-01T09:39:22.723Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo [none]
+[debug] [2026-01-01T09:39:22.750Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-01-01T09:39:22.752Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-01T09:39:22.777Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo [none]
+[debug] [2026-01-01T09:39:23.050Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo 200
+[debug] [2026-01-01T09:39:23.051Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo {"name":"projects/turizm-ef808/billingInfo","projectId":"turizm-ef808","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-01T09:39:23.068Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.068Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.069Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.069Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.093Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.093Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.094Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [none]
+[debug] [2026-01-01T09:39:23.094Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T09:39:23.097Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-01T09:39:23.097Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T09:39:23.100Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-01T09:39:23.100Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T09:39:23.220Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo 200
+[debug] [2026-01-01T09:39:23.220Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo {"name":"projects/turizm-ef808/billingInfo","projectId":"turizm-ef808","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-01T09:39:23.222Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.223Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.223Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.223Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.238Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.238Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:23.238Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [none]
+[debug] [2026-01-01T09:39:23.238Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T09:39:23.241Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-01T09:39:23.241Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T09:39:23.244Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-01T09:39:23.244Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T09:39:23.596Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-01T09:39:23.596Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-01T09:39:23.957Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-01T09:39:23.957Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-01T09:39:23.978Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com 200
+[debug] [2026-01-01T09:39:23.978Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-01T09:39:24.100Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-01T09:39:24.100Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-01T09:39:24.123Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-01T09:39:24.124Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-01T09:39:24.131Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com 200
+[debug] [2026-01-01T09:39:24.131Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T09:39:24.140Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T09:39:24.141Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T09:39:24.141Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:24.141Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:24.141Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo [none]
+[debug] [2026-01-01T09:39:24.757Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo 200
+[debug] [2026-01-01T09:39:24.758Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo {"name":"projects/turizm-ef808/billingInfo","projectId":"turizm-ef808","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T09:39:24.765Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T09:39:24.765Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T09:39:24.805Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T09:39:24.805Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T09:39:24.806Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:24.806Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:24.806Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo [none]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T09:39:24.812Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T09:39:24.812Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T09:39:24.812Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:24.812Z] Checked if tokens are valid: true, expires at: 1767263961752
+[debug] [2026-01-01T09:39:24.813Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo [none]
+[debug] [2026-01-01T09:39:25.434Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo 200
+[debug] [2026-01-01T09:39:25.435Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo {"name":"projects/turizm-ef808/billingInfo","projectId":"turizm-ef808","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T09:39:25.437Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T09:39:25.437Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T09:39:25.448Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo 200
+[debug] [2026-01-01T09:39:25.449Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo {"name":"projects/turizm-ef808/billingInfo","projectId":"turizm-ef808","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T09:39:25.453Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T09:39:25.454Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T14:43:30.450Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T14:43:30.455Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T14:43:30.462Z] Checked if tokens are valid: false, expires at: 1767263961752
+[debug] [2026-01-01T14:43:30.464Z] Checked if tokens are valid: false, expires at: 1767263961752
+[debug] [2026-01-01T14:43:30.466Z] > refreshing access token with scopes: []
+[debug] [2026-01-01T14:43:30.475Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-01-01T14:43:30.478Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T14:43:30.740Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T14:43:30.743Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T14:43:30.744Z] Checked if tokens are valid: false, expires at: 1767263961752
+[debug] [2026-01-01T14:43:30.744Z] Checked if tokens are valid: false, expires at: 1767263961752
+[debug] [2026-01-01T14:43:30.747Z] > refreshing access token with scopes: []
+[debug] [2026-01-01T14:43:30.748Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-01-01T14:43:30.748Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-01T14:43:30.901Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-01-01T14:43:30.907Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-01T14:43:30.948Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo [none]
+[debug] [2026-01-01T14:43:30.995Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-01-01T14:43:30.999Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-01T14:43:31.035Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo [none]
+[debug] [2026-01-01T14:43:31.740Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo 200
+[debug] [2026-01-01T14:43:31.743Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo {"name":"projects/turizm-ef808/billingInfo","projectId":"turizm-ef808","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-01T14:43:31.774Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:31.776Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:31.777Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:31.782Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:31.927Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:31.928Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:31.934Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [none]
+[debug] [2026-01-01T14:43:31.935Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T14:43:31.947Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-01T14:43:31.947Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T14:43:31.956Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-01T14:43:31.956Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T14:43:32.260Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo 200
+[debug] [2026-01-01T14:43:32.261Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo {"name":"projects/turizm-ef808/billingInfo","projectId":"turizm-ef808","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-01T14:43:32.262Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:32.263Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:32.263Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:32.263Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:32.283Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:32.283Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:32.284Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [none]
+[debug] [2026-01-01T14:43:32.284Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T14:43:32.287Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-01T14:43:32.288Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T14:43:32.291Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-01T14:43:32.291Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/turizm-ef808
+[debug] [2026-01-01T14:43:33.042Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-01T14:43:33.048Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-01T14:43:33.059Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-01T14:43:33.059Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-01T14:43:33.094Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com 200
+[debug] [2026-01-01T14:43:33.095Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-01T14:43:33.345Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-01T14:43:33.350Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-01T14:43:33.359Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-01T14:43:33.359Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-01T14:43:33.383Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com 200
+[debug] [2026-01-01T14:43:33.383Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/turizm-ef808/services/firestore.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T14:43:33.413Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T14:43:33.413Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T14:43:33.413Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:33.413Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:33.414Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo [none]
+[debug] [2026-01-01T14:43:34.260Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo 200
+[debug] [2026-01-01T14:43:34.263Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo {"name":"projects/turizm-ef808/billingInfo","projectId":"turizm-ef808","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T14:43:34.274Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T14:43:34.274Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T14:43:34.296Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T14:43:34.296Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T14:43:34.296Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:34.296Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:34.296Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo [none]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T14:43:34.305Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T14:43:34.306Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T14:43:34.306Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:34.306Z] Checked if tokens are valid: true, expires at: 1767282210000
+[debug] [2026-01-01T14:43:34.307Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo [none]
+[debug] [2026-01-01T14:43:34.517Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo 200
+[debug] [2026-01-01T14:43:34.517Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo {"name":"projects/turizm-ef808/billingInfo","projectId":"turizm-ef808","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T14:43:34.526Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T14:43:34.526Z] > authorizing via signed-in user (sat.open.world@gmail.com)
+[debug] [2026-01-01T14:43:34.552Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo 200
+[debug] [2026-01-01T14:43:34.552Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/turizm-ef808/billingInfo {"name":"projects/turizm-ef808/billingInfo","projectId":"turizm-ef808","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-01T14:43:34.557Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-01T14:43:34.558Z] > authorizing via signed-in user (sat.open.world@gmail.com)

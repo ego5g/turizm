@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { Toaster } from 'react-hot-toast'; // 1. Импорт Toaster
 import { AiPlannerProvider } from './contexts/AiPlannerContext'; // 2. Импорт провайдера
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -124,6 +125,7 @@ export default function RootLayout({
             </div>
           </AiPlannerProvider>
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
